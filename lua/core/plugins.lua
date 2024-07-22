@@ -19,9 +19,8 @@ use {
 	  requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
-use({ 'nanotech/jellybeans.vim' })
-	  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
+use({ 'nanotech/jellybeans.vim' })  
+use('nvim-treesitter/nvim-treesitter', {'run'= ':TSUpdate'})
   if packer_bootstrap then
     require('packer').sync()
   end
