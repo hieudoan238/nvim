@@ -20,7 +20,7 @@ use {
 	}
 
 use({ 'nanotech/jellybeans.vim' })  
-use('nvim-treesitter/nvim-treesitter', {'run'= ':TSUpdate'})
+use('nvim-treesitter/nvim-treesitter', {run= ':TSUpdate'})
   if packer_bootstrap then
     require('packer').sync()
   end
