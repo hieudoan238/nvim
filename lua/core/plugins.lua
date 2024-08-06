@@ -21,7 +21,21 @@ use {
 
 use({ 'nanotech/jellybeans.vim' })  
 use('nvim-treesitter/nvim-treesitter', {run= ':TSUpdate'})
-  if packer_bootstrap then
+use{'VonHeikemen/lsp-zero.nvim', branch = 'v4.x'}
+---LSP Supporrt
+use{'neovim/nvim-lspconfig'}
+use{'hrsh7th/cmp-nvim-lsp'}
+use{'hrsh7th/nvim-cmp'}
+use {
+    "williamboman/mason.nvim"
+}
+use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+}
+---Auto-completion
+if packer_bootstrap then
     require('packer').sync()
   end
 end)
