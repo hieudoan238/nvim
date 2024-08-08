@@ -1,7 +1,6 @@
 vim.opt.relativenumber = true
 require("core.mappings")
 require("core.plugins")
-
 ---
 -- LSP configuration
 ---
@@ -41,7 +40,7 @@ local cmp = require('cmp')
 
 cmp.setup({
   sources = {
-    {name = 'nvim_lsp'},
+    {name = 'nvim_lsp','luasnip'},
   },
   snippet = {
     expand = function(args)
@@ -69,9 +68,24 @@ require('mason').setup({})
 require('mason-lspconfig').setup({
   -- Replace the language servers listed here
   -- with the ones you want to install
+  ensure_installed = { 'pyright'},
   handlers = {
     function(server_name)
       require('lspconfig')[server_name].setup({})
     end,
   }
 })
+
+vim.cmd[[
+" Use Tab to expand and jump through snippets
+imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
+smap <silent><expr> <Tab> luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : '<Tab>'
+
+" Use Shift-Tab to jump backwards through snippets
+imap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
+smap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
+]]
+
+
+require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/after/plugin/LuaSnip"})
+

@@ -19,22 +19,26 @@ use {
 	  requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
-use({ 'nanotech/jellybeans.vim' })  
 use('nvim-treesitter/nvim-treesitter', {run= ':TSUpdate'})
 use{'VonHeikemen/lsp-zero.nvim', branch = 'v4.x'}
 ---LSP Supporrt
-use{'neovim/nvim-lspconfig'}
 use{'hrsh7th/cmp-nvim-lsp'}
 use{'hrsh7th/nvim-cmp'}
-use {
-    "williamboman/mason.nvim"
-}
+
+use { "catppuccin/nvim", as = "catppuccin" }
 use {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
 }
----Auto-completion
+use {'freddiehaddad/feline.nvim'}
+use({
+	"L3MON4D3/LuaSnip",
+	-- follow latest release.
+	tag = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+	-- install jsregexp (optional!:).
+	build = "make install_jsregexp"
+})
 if packer_bootstrap then
     require('packer').sync()
   end
