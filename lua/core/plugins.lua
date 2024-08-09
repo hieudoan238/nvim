@@ -24,7 +24,12 @@ use{'VonHeikemen/lsp-zero.nvim', branch = 'v4.x'}
 ---LSP Supporrt
 use{'hrsh7th/cmp-nvim-lsp'}
 use{'hrsh7th/nvim-cmp'}
-
+use {
+  'nvim-tree/nvim-tree.lua',
+  requires = {
+    'nvim-tree/nvim-web-devicons',  
+  },
+}
 use { "catppuccin/nvim", as = "catppuccin" }
 use {
     "williamboman/mason.nvim",
@@ -39,6 +44,10 @@ use({
 	-- install jsregexp (optional!:).
 	build = "make install_jsregexp"
 })
+use { 'saadparwaiz1/cmp_luasnip' }
+use 'nvim-tree/nvim-web-devicons'
+use 'lewis6991/gitsigns.nvim' 
+use 'romgrk/barbar.nvim'
 if packer_bootstrap then
     require('packer').sync()
   end
