@@ -1,4 +1,5 @@
 vim.opt.relativenumber = true
+vim.g.vimtex_view_method = "zathura"
 require("core.mappings")
 require("core.plugins")
 
@@ -24,5 +25,7 @@ require('mason-lspconfig').setup({
     end,
   }
 })
+
+
 
 
