@@ -48,6 +48,7 @@ use { 'saadparwaiz1/cmp_luasnip' }
 use 'nvim-tree/nvim-web-devicons'
 use 'lewis6991/gitsigns.nvim' 
 use 'romgrk/barbar.nvim'
+use {'lervag/vimtex'}
 if packer_bootstrap then
     require('packer').sync()
   end
