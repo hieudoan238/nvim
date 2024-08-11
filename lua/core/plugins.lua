@@ -49,6 +49,10 @@ use 'nvim-tree/nvim-web-devicons'
 use 'lewis6991/gitsigns.nvim' 
 use 'romgrk/barbar.nvim'
 use {'lervag/vimtex'}
+use {  'nvim-lualine/lualine.nvim',
+  requires = { 'nvim-tree/nvim-web-devicons', opt = true }}
+
+
 if packer_bootstrap then
     require('packer').sync()
   end
