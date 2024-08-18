@@ -10,9 +10,4 @@ local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
 
 
-return {
-  -- Shorthand
-  s("hi",  -- LuaSnip expands this to {trig = "hi"}
-    { t("Hello, world!"), }
-  ),
-}
+
