@@ -41,21 +41,54 @@ s({trig="eq", dscr="Expands 'eq' into an equation environment"},
 ),
 s({trig=';texinit',dscr='boilerplate start'},
   fmta(
-     [[
-      \documentclass[12pt]{<>}
-      \usepackage{graphicx}
+[[
+\documentclass[12pt]{<>}
+\usepackage{graphicx}
+
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.5,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+backgroundcolor=\color{backcolour},   
+commentstyle=\color{codegreen},
+keywordstyle=\color{magenta},
+numberstyle=\tiny\color{codegray},
+stringstyle=\color{codepurple},
+basicstyle=\ttfamily\footnotesize,
+breakatwhitespace=false,         
+breaklines=true,                 
+captionpos=b,                    
+keepspaces=true,                 
+numbers=left,                    
+numbersep=5pt,                  
+showspaces=false,                
+showstringspaces=false,
+showtabs=false,                  
+tabsize=2
+}
+\lstset{style=mystyle}
 
 
-      \title{<>}
-      \author{Eish}
-      \date{<>}
 
-      \begin{document}
-      \maketitle
-      <>
-      \end{document}
 
-     ]],
+
+
+\title{<>}
+\author{Eish}
+\date{<>}
+
+\begin{document}
+\maketitle
+<>
+\end{document}
+
+]],
      { i(1),
       i(2),
       i(3),
