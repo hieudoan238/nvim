@@ -52,6 +52,15 @@ use {'lervag/vimtex'}
 use {  'nvim-lualine/lualine.nvim',
   requires = { 'nvim-tree/nvim-web-devicons', opt = true }}
 
+use{"tpope/vim-dadbod",
+    "kristijanhusak/vim-dadbod-completion",
+    "kristijanhusak/vim-dadbod-ui"}
+
+
+use {
+'glepnir/dashboard-nvim',
+requires = { 'nvim-tree/nvim-web-devicons' }
+}    
 
 if packer_bootstrap then
     require('packer').sync()
