@@ -10,4 +10,5 @@ smap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '
 
 
 require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/after/plugin/LuaSnip"})
+vim.keymap.set('n', '<Leader>L', '<Cmd>lua require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/LuaSnip/"})<CR>')
 

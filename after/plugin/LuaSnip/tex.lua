@@ -95,7 +95,7 @@ tabsize=2
       i(4)}
   )
 ),
-s({trig="env",dscr="begin env at will",snippetType='autosnippet' },
+s({trig="env",dscr="begin env at will"},
   fmta(
     [[
       \begin{<>}
@@ -107,6 +107,7 @@ s({trig="env",dscr="begin env at will",snippetType='autosnippet' },
       i(2),
       rep(1),  -- this node repeats insert node i(1)
     }
-  )
+  ),
+    {condition = line_begin}
 ),
 }
