@@ -9,5 +9,29 @@ local fmt = require("luasnip.extras.fmt").fmt
 local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
 
+return{
+	s({trig='/docstr',dscr='python docstring'},
+  		fmta(
+			[[
+			 """
+			 Description
+			 -----------
+			 <>
 
+			Parameters
+			----------
 
+			<>
+
+			Returns
+			-------
+
+			<>
+
+			"""
+			]],
+			{i(1),i(2),i(3)}
+		)
+	)
+
+}
