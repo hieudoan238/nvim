@@ -9,14 +9,22 @@ require("nvim-tree").setup({
     sorter = "case_sensitive",
   },
   view = {
-    width = 30,
+    width = 15,
+    adaptive_size = true
   },
   renderer = {
     group_empty = true,
   },
   filters = {
-    dotfiles = true,
+    dotfiles = false, custom = { '^.git$' },
   },
 })
 
 vim.cmd("NvimTreeOpen")
+
+local map = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
+
+
+map('n', '<Space>treeoff', '<Cmd>NvimTreeClose<CR>', opts)
+map('n', '<Space>treeon', '<Cmd>NvimTreeOpen<CR>', opts)
